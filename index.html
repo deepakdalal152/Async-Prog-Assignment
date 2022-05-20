@@ -6,6 +6,44 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
+        <style>
+            #slideshow{
+                width: 400px;
+                height: 400px;
+                margin: auto;
+                margin-top: 10%;
+                border: 2px solid red;
+            }
+            #sort-buttons{
+                margin: auto;
+                border: 2px solid red;
+                width: 400px;
+                height: 50px;
+                display: flex;
+                font-size: 200%;
+            }
+                .button{
+                    width: 50%;
+                    border: 2px red solid;
+                    text-align: center;
+                }
+            #movies{
+                width: 400px;
+                height: 100px;
+                border: 2px red solid;
+                margin: auto;
+            }
+                #addMovies{
+                    width: 100%;
+                    height: 100%;
+                    margin: auto;
+                }
+                    #url{
+                        border: 2px red solid;
+                        width: 80%;
+                        
+                    }
+        </style>
     </head>
 
     <body>
@@ -17,10 +55,27 @@
         <div id="sort-buttons">
 
             <!--Add sorting here-->
+            <div id="play" class="button">></div>
+            <div id="pause"class="button">=</div>
         </div>
         <div id="movies">
             <!--Show list of movies here-->
+            <form action="" id="addMovies">
+                <input type="text" name="Movies URL" id="url" class="urlBox" >
+                <input type="submit" name="Submit" id="addMovieBtn" class="urlBox">
+            </form>
         </div>
     </body>
 
 </html>
+<script>
+    let getSlidesImagePath = document.getElementById('addMovies')
+    getSlidesImagePath.addEventListener("onsubmit",addSlides())
+    function addSlides()
+    {
+        Event.preventDefault;
+        console.log("test")
+    }
+    
+
+</script>
