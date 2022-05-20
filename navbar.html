@@ -5,8 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #navbar{
+            width: 100%;
+            border: 2px red solid;
+            height: 10%;
+            margin: auto;
+            display:grid;
+            grid-template-columns: 5fr 1fr 1fr 1fr;
+            padding: 1%;
+        }
+        #leftSpace,#login,#signup,#home{
+            width: 100%;
+            /* border: 2px red solid; */
+            text-align: center;
+            padding: 1% 1% 1% 1%;
+            font-size: 150%;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="navbar">
+        <div id="leftSpace"></div>
+        <div id="login">Login</div>
+        <div id="signup">Signup</div>
+        <div id="home">Home</div>
+    </div>
 </body>
 </html>
