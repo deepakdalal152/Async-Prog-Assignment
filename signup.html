@@ -61,11 +61,11 @@
 <script>
 
      let getAllDetails = document.querySelector('form')
+        getAllDetails.addEventListener("submit",storeData)
 
-     console.log(getAllDetails.name.value)
     function storeData()
     {
-        Event.preventDefault;
+        event.preventDefault;
         console.log(getAllDetails)
     }
 
