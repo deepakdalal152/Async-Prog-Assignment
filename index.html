@@ -70,10 +70,11 @@
 </html>
 <script>
     let getSlidesImagePath = document.getElementById('addMovies')
-    getSlidesImagePath.addEventListener("submit",addSlides)
+    getSlidesImagePath.addEventListener("onsubmit",addSlides)
+    
     function addSlides()
     {
-        event.preventDefault();
+        Event.preventDefault();
         console.log("test")
     }
     
