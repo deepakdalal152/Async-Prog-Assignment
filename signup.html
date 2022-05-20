@@ -6,6 +6,36 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Signup</title>
+
+        <style>
+            #signup-form-div{
+                width: 400px;
+                height: 400px;
+                border: 2px red solid;
+                margin: auto;
+                margin-top: 15%;
+                text-align: center;
+                padding: 5%;
+            }
+            #pageName{
+                /* text-align: center; */
+                font-size: 300%;
+                height: 50%;
+                margin-bottom: 20%;
+            }
+            .inputBox{
+                text-overflow: clip;
+                width: 80%;
+                border: 2px red solid;
+                font-size: 120%;
+                padding: 2%;
+                margin-bottom: 2%;
+            }
+            #submitBtn{
+                font-size: 150%;
+                padding: 1% 5% 1% 5%;
+            }
+        </style>
     </head>
 
     <body>
@@ -13,6 +43,13 @@
 
             <form>
                 <!--Write form input elements here-->
+                <div id="pageName">Signup</div>
+                <input type="text" id="name" class="inputBox" placeholder="Enter your Name">
+                <input type="number" id="number" class="inputBox" placeholder="Enter your contact">
+                <input type="email" id="email" class="inputBox" placeholder="Enter your Email">
+                <input type="password" id="password" class="inputBox" placeholder="Enter your password">
+                <input type="submit" id="submitBtn" />
+
 
             </form>
 
@@ -20,3 +57,17 @@
     </body>
 
 </html>
+
+<script>
+
+     let getAllDetails = document.querySelector('form')
+
+     console.log(getAllDetails.name.value)
+    function storeData()
+    {
+        Event.preventDefault;
+        console.log(getAllDetails)
+    }
+
+
+</script>
