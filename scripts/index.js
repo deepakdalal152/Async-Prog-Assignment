@@ -18,6 +18,7 @@
     
 // -------slideshow---------
 
+
 let i=0;
 let id;
 function start(){
@@ -45,7 +46,7 @@ function start(){
        i++;
 
 
-    },5000)
+    },3000)
 
 }
 

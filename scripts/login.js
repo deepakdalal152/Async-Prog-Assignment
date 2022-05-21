@@ -25,7 +25,7 @@ getUserDetail.addEventListener("submit", compareData)
                 {
                     if(getUserDetail.email.value === getStorageData[i].email && getUserDetail.password.value === getStorageData[i].password)
                     {
-                        console.log("You are in ")
+                        // console.log("You are in ")
                         findEmail = true;
                         findPassword = true;
                         window.open("index.html")
@@ -36,7 +36,7 @@ getUserDetail.addEventListener("submit", compareData)
                 {
                     event.preventDefault();
                     alert("Invalid Credinatial")
-                    console.log( findEmail,findPassword)
+                    // console.log( findEmail,findPassword)
                 }
 
             }
