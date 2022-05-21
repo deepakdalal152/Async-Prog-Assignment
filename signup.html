@@ -6,36 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Signup</title>
-
-        <style>
-            #signup-form-div{
-                width: 400px;
-                height: 400px;
-                border: 2px red solid;
-                margin: auto;
-                margin-top: 15%;
-                text-align: center;
-                padding: 5%;
-            }
-            #pageName{
-                /* text-align: center; */
-                font-size: 300%;
-                height: 50%;
-                margin-bottom: 20%;
-            }
-            .inputBox{
-                text-overflow: clip;
-                width: 80%;
-                border: 2px red solid;
-                font-size: 120%;
-                padding: 2%;
-                margin-bottom: 2%;
-            }
-            #submitBtn{
-                font-size: 150%;
-                padding: 1% 5% 1% 5%;
-            }
-        </style>
+        <link rel="stylesheet" href="./styles/signup.css">
     </head>
 
     <body>
@@ -58,47 +29,4 @@
 
 </html>
 
-<script>
-// <------gettting form data----------->
-
-
-     let getAllDetails = document.querySelector('form')
-
-    getAllDetails.addEventListener("submit",storeData)
-
-// <-----creating function for userData----->
-
-    function userInfo(name,number,email,password)
-    {
-        this.name = name;
-        this.number = number;
-        this.email = email;
-        this.password = password;
-    }
-
-    let dataBucket = JSON.parse(localStorage.getItem("userSignupDetails")) || [];
-
-    function storeData()
-    {
-        
-        let name = getAllDetails.name.value
-        let number = getAllDetails.number.value
-        let email = getAllDetails.email.value
-        let password = getAllDetails.password.value
-
-        if(name === '' || number === '' || email === '' || password === '')
-        {
-            alert("Please fill all blanks")
-            event.preventDefault()
-        }
-        else
-        {
-            event.preventDefault()
-            let userDetails = new userInfo(name,number,email,password)
-            dataBucket.push(userDetails)
-            localStorage.setItem("userSignupDetails",JSON.stringify(dataBucket))
-        }
-        
-    }
-
-</script>
+<script src="./scripts/signup.js"> </script>

@@ -9,14 +9,14 @@
         <style>
             #slideshow{
                 width: 400px;
-                height: 400px;
+                height: 350px;
                 margin: auto;
                 margin-top: 10%;
-                border: 2px solid red;
+                border: 2px solid rgb(17, 16, 16);
             }
             #sort-buttons{
                 margin: auto;
-                border: 2px solid red;
+                border: 2px solid rgb(22, 21, 21);
                 width: 400px;
                 height: 50px;
                 display: flex;
@@ -24,13 +24,13 @@
             }
                 .button{
                     width: 50%;
-                    border: 2px red solid;
+                    border: 2px rgb(31, 29, 29) solid;
                     text-align: center;
                 }
             #movies{
                 width: 400px;
                 height: 100px;
-                border: 2px red solid;
+                border: 2px rgb(19, 6, 6) solid;
                 margin: auto;
             }
                 #addMovies{
@@ -38,11 +38,38 @@
                     height: 100%;
                     margin: auto;
                 }
-                    #url{
-                        border: 2px red solid;
-                        width: 80%;
+             #url{
+                    border: 2px rgb(21, 17, 17) solid;
+                    width: 80%;
+                    margin-top: 5%;
+                    padding: 1%;
                         
-                    }
+                 }
+         #play{
+                cursor: pointer;
+                background-color: blue;
+                 color: white;
+              }
+         #pause{
+                cursor: pointer;
+                background-color: rgb(77, 200, 231);
+                color: white;
+
+            }
+            #addMovieBtn:hover{
+                background-color: blueviolet;
+                cursor: pointer;
+                color: white;
+            }
+            #addMovieBtn{
+                 background-color: burlywood;
+                 border-radius: 10px;
+                 font-size: 15px;
+            }
+            /* #image1{
+                width: 100%;
+                height: 100%;
+            } */
         </style>
     </head>
 
@@ -55,8 +82,8 @@
         <div id="sort-buttons">
 
             <!--Add sorting here-->
-            <div id="play" class="button">></div>
-            <div id="pause"class="button">=</div>
+            <div id="play" class="button" onclick="start()">></div>
+            <div id="pause"class="button" onclick="stop()">=</div>
         </div>
         <div id="movies">
             <!--Show list of movies here-->
@@ -71,11 +98,56 @@
 <script>
     let getSlidesImagePath = document.getElementById('addMovies')
     getSlidesImagePath.addEventListener("submit",addSlides)
+
+    let imgArr=JSON.parse(localStorage.getItem("localimage")) || []
+
     function addSlides()
     {
         event.preventDefault();
-        console.log("test")
-    }
+        let img=document.getElementById("url").value;
+        
+        imgArr.push(img);
+
+        localStorage.setItem("localimage",JSON.stringify(imgArr))
+          
+        document.getElementById("url").value=null
+        }
     
+// -------slideshow---------
+
+let i=0;
+let id;
+function start(){
+    let imgArr=JSON.parse(localStorage.getItem("localimage"));
+
+    let slideshow=document.getElementById("slideshow");
+
+
+   
+
+    id= setInterval(function(){
+       
+        
+        if(i===imgArr.length){
+            i=0;
+        }
+        slideshow.innerHTML=null;
+        let image=imgArr[i]
+         console.log("i:",i)
+        let showimg=document.createElement("img")
+        // showimg.setAttribute("id","image1")
+        showimg.src=image;
+        slideshow.append(showimg)
+
+       i++;
+
+
+    },2000)
+
+}
+
+function stop(){
+    clearInterval(id);
+}
 
 </script>

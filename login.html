@@ -6,36 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
-
-        <style>
-            #login-form-div{
-                width: 400px;
-                height: 400px;
-                border: 2px red solid;
-                margin: auto;
-                margin-top: 15%;
-                text-align: center;
-                padding: 5%;
-            }
-            #pageName{
-                /* text-align: center; */
-                font-size: 300%;
-                height: 50%;
-                margin-bottom: 20%;
-            }
-            .inputBox{
-                text-overflow: clip;
-                width: 80%;
-                border: 2px red solid;
-                font-size: 120%;
-                padding: 2%;
-                margin-bottom: 2%;
-            }
-            #submitBtn{
-                font-size: 150%;
-                padding: 1% 5% 1% 5%;
-            }
-        </style>
+        <link rel="stylesheet" href="./styles/login.css">
         
     </head>
 
@@ -55,50 +26,4 @@
     </body>
 
 </html>
-<script>
-
-// <-----get user Data ---->
-    
-    let getUserDetail = document.querySelector('form')
-
-    getUserDetail.addEventListener("submit", compareData)
-
-    // <----------get storage data for compare------->
-        let getStorageData = JSON.parse(localStorage.getItem("userSignupDetails"))
-
-        // <-----------compare details ---------->
-
-            function compareData()
-            {   
-                // event.preventDefault()
-                // console.log(getStorageData[1].email.value + getStorageData[1].password.value)
-                if(getUserDetail.email.value === '' || getUserDetail.password.value === '')
-                {
-                    event.preventDefault()
-                    alert("Please fill all details")
-                }
-                else{
-                    let findEmail = false;
-                    let findPassword = false;
-                    for(let i = 0 ; i < getStorageData.length; i++)
-                    {
-                        if(getUserDetail.email.value === getStorageData[i].email && getUserDetail.password.value === getStorageData[i].password)
-                        {
-                            console.log("You are in ")
-                            findEmail = true;
-                            findPassword = true;
-                            return;
-                        }
-                    }
-                    if(!(findEmail && findPassword))
-                    {
-                        event.preventDefault();
-
-                        alert("Invalid Credinatial", findEmail,findPassword)
-                    }
-                    else{
-                        Window.location.href="index.html"
-                    }
-                    }
-            }
-</script>
+<script src="./scripts/login.js"></script>
